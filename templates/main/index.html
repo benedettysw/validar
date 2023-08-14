@@ -1,0 +1,40 @@
+{% extends '/layout.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/login.css') }}">
+    <title>Document</title>
+</head>
+<body>
+   <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="login-form">
+                <img src="{{ url_for('static', filename='img/sena.png') }}" alt="Logo" class="logo">
+                <h2 class="form-title"><br>Iniciar sesión</h2>
+                <form method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Documento" id="email" required>
+                    </div>
+
+                    <br>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Contraseña" id="password" required>
+                    </div>
+                    <button type="button" onclick="validar()" class="btn btn-primary">Iniciar sesión</button>
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="{{url_for('static', filename='js/validar.js')}}"></script>
+</body>
+</html>
+
+{%endblock%}
